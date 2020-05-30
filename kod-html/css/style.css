@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+
+/* -- 1.2 Principy -- */
+
+/* a) kaskáda - pořadí */
+.text-red {color: red;}
+.blue {color: blue;}
+
+/* 
+b) kaskáda - specificita 
+ - https://specificity.keegan.st/
+ - https://mjswensen.github.io/css-power-ups/the-cascade-and-specificity/specificity-quiz/
+*/
+* {} /* 000 */
+h1 {} /* 001 */
+h1 a {} /* 002 */
+.heading {} /* 010 */
+.heading .link .main {} /* 030 */
+.heading li a:first-child {} /* 012 */
+#header {} /* 100 */
+#header li .link {} /* 111 */
+/* style="color: red;" 1000 */
+
+/* c) kaskáda - důležitost */
+#header ul li a.link {
+  color: red;
+}
+
+.link {
+  color: blue !important;
+}
+
+/*
+dědičnost - inheritance, font x margin
+ - https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
+*/
+.uvod {
+  color: red;
+  font-size: 25px;
+  margin-bottom: 30px;
+  background-color: #ddd;
+}
+
+.uvod-bottom {
+  margin-top: 60px;
+  background-color: teal;
+}
+
+.uvod-title {
+  color: blue;
+}
+
+/* 
+selektory > + ~ [data-attr] a[href^="https"] 
+ - https://flukeout.github.io/
+*/
+
+
+/* pseudoselektory
+ - https://codepen.io/svobodalukas/pen/EeMRKL
+*/
+
+
+/* Box model */
+.box {
+  width: 300px;
+  height: 300px;
+  padding: 25px;
+  border: 5px solid red;
+  background-color: blue;
+  color: white;
+  margin: 50px;
+}
+
+/* 
+Margin-bottom flow, margin collapse
+ - https://css-tricks.com/what-you-should-know-about-collapsing-margins/
+*/
+
+
+/* display, position, visibility */
+
+/* jednotky */
+
+/* background - size, attachement, position */
+
+/* z-index */
+
+/*
+animace - transform, animation
+ - https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+*/
+
+/*
+calc
+ - https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+*/
+
+
+/* pseudoelementy - before/after (checkbox, radio, list), counter */
+
+
+/* webfonty */
+
+/*
+CSS proměnné
+ - https://www.vzhurudolu.cz/prirucka/css-promenne
+*/
+
+html {
+  --color-primary: orange;
+  --box-height: calc(25vh - 3rem);
+}
+
+.box {
+  color: var(--color-primary);
+  height: var(--box-height);
+}
+
+/* Flexbox - align items, justify content */
+
+
+/* 
+Test:
+ - https://tutorialzine.com/2017/07/how-well-do-you-know-css
+*/

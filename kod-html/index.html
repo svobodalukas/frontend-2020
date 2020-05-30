@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frontend / Empty project</title>
+    <meta name="description" content="Frontend" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Microdata - Open Graph / https://ogp.me/ -->
+    <meta property="og:title" content="Frontend web">
+    <meta property="og:image" content="assets/social.jpg" />
+    <meta property="og:url" content="http://www.site.com" />
+    <meta property="og:site_name" content="Frontend web" />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <!--
+      Sémantika:
+       - header, footer, nav, main, section, article
+       - vysvětlení: https://www.internetingishard.com/html-and-css/semantic-html/
+       - struktura dokumentu (Outliner: https://gsnedders.html5.org/outliner/)
+    -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">link</a>
+          </li>
+          <li>
+            <a href="#">link</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <header></header>
+        <h1>Heading</h1>
+
+        <article>
+          <header></header>
+          <h1>Heading</h1>
+          <div class="">Some content ...</div>  
+          <footer></footer>
+        </article>
+
+        <article>
+          <header></header>
+          <h1>Heading</h1>
+          <div class="">Some content ...</div>  
+          <footer></footer>
+        </article>
+
+        <footer></footer>
+      </section>
+    </main>
+    <aside>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">link</a>
+          </li>
+          <li>
+            <a href="#">link</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <footer>
+      &copy; 2020
+    </footer>
+
+    <!--
+      Média
+       - Figure, figcaption
+       - Responsivní obrázky: picture, srcset, sizes
+       - ukázka: https://codepen.io/svobodalukas/pen/bmNPoO
+    -->
+    <figure>
+      <img src="assets/foto-1200.jpg" alt="">
+      <figcaption>Popisek obrázku</figcaption>
+    </figure>
+
+    <picture>
+      <source type="image/webp" media="(max-width: 400px)" srcset="assets/image-640.webp"/>    
+      <source media="(max-width: 400px)" srcset="assets/foto-640.jpg"/>   
+      <img src="assets/image-1200.jpg"/>
+    </picture>
+
+    <img
+      src="assets/image-640.jpg"
+      srcset="assets/image-640.jpg 1x, assets/image-1200.jpg 2x"
+    >
+
+    <img
+      src="assets/image-640.jpg"
+      srcset="assets/image-640.jpg 640w, assets/image-1200.jpg 1200w"
+      sizes="100vw, (min-width: 640px) 50vw"
+    >
+
+    <!-- 
+      Média
+      video, audio
+    -->
+    <video controls>
+      <source type="video/mp4" src="assets/video.mp4"/>
+      Your browser does not support the video element.
+    </video>
+
+    <audio controls>
+      <source type="audio/mpeg" src="assets/audio.mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+
+    <!--
+      Canvas
+    -->
+    <script type="text/javascript">
+      function draw() {
+        var canvas = document.getElementById('test');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+
+          ctx.fillStyle = 'rgb(200, 0, 0)';
+          ctx.fillRect(60, 40, 50, 50);
+
+          ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+          ctx.fillRect(30, 30, 50, 50);
+        }
+      }
+
+      window.onload = (event) => {
+        draw();
+      };
+    </script>
+    <style type="text/css">
+      canvas { border: 1px solid black; }
+    </style>
+    <canvas id="test" width="150" height="150"></canvas>
+
+    <!-- Formuláře -->
+    <div>
+      <input type="email" value="">
+      <input type="date" value="">
+      <input type="datetime">
+      <input type="number" value="" min="5" max="12" step="0.5">
+      <input type="search">
+    </div>
+
+    <!-- Microdata - Schema.org / https://schema.org/Product -->
+    <div itemscope itemtype="http://schema.org/Product">
+      <img itemprop="image" src="dell-30in-lcd.jpg" alt="A Dell UltraSharp monitor"/>
+      <span itemprop="name">Dell UltraSharp 30" LCD Monitor</span>
+      <div itemprop="aggregateRating"
+        itemscope itemtype="http://schema.org/AggregateRating">
+        <span itemprop="ratingValue">87</span>
+        out of <span itemprop="bestRating">100</span>
+        based on <span itemprop="ratingCount">24</span> user ratings
+      </div>
+      <div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+        <span itemprop="lowPrice">$1250</span>
+        to <span itemprop="highPrice">$1495</span>
+        from <span itemprop="offerCount">8</span> sellers
+        Sellers:
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <a itemprop="url" href="save-a-lot-monitors.com/dell-30.html">
+            Save A Lot Monitors - $1250</a>
+        </div>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <a itemprop="url" href="jondoe-gadgets.com/dell-30.html">
+            Jon Doe's Gadgets - $1350</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- lazyload image -->
+    <img src="assets/image-640.jpg" data-src="assets/test-eklasa.jpg" class="lazy" alt="eklasa">
+
+    <script src="script.js"></script>
+  </body>
+</html>

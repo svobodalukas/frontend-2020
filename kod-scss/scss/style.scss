@@ -1,0 +1,78 @@
+/** 
+SCSS pro pokročilé
+
+https://scotch.io/tutorials/mastering-advanced-sass-workflow-with-zurb-foundation-part-1
+https://gist.github.com/jareware/4738651
+
+*/
+
+@import "variables";
+@import "layout";
+
+$production: true;
+
+$alert-colors: (
+  "ok": green,
+  "error": red,
+);
+
+
+// Parent selector &
+.heading {
+  color: $primary-color;
+
+  @if ($production) {
+    .content.content-dark .article-main & {
+      color: lighten($primary-color, 10%);
+    }
+  }
+}
+
+// !default
+
+
+// Media query nesting
+h1 {
+  font-size: 2rem;
+
+  @media screen and (min-width: 640px) {
+    font-size: 3rem;
+
+    @media screen and (orientation: landscape) {
+      font-size: 5rem;
+    }
+  }
+}
+
+
+// If, each, map-get
+.alert {
+  padding: 0.5rem 2rem;
+}
+
+$alerts: 'ok' 'error';
+@each $alert in $alerts {
+  .alert-#{$alert} {
+    background: url('../assets/ico-#{$alert}.svg') no-repeat left center;
+    color: map-get($alert-colors, $alert);
+  }
+}
+
+// Functions - mix, defaults
+@function makeBlue($color, $amount: 100) {
+  @return mix(rgb(0,0,250), $color, $amount);
+}
+
+.heading {
+  color: makeBlue($primary-color, 25);
+}
+
+// Mixin, extend
+@mixin headingVars {
+  background-color: yellow;
+}
+
+.new-heading {
+  @extend .heading;
+  @include headingVars();
+}

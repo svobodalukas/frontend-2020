@@ -1,0 +1,120 @@
+/*reset */
+* {
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+}
+
+html {
+  --primary: #bf2c67;
+}
+
+/*base layout */
+a {
+  color: var(--primary);
+}
+
+/* Komponenta - detail clanku*/
+.article-item {
+  position: relative;
+  padding: 9px 18px;
+  border: 1px solid transparent;
+  color: #666;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin: 0 0 1rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-item {
+    float: left;
+    max-width: 450px;
+    height: 375px;
+    padding: 16px 8px 8px;
+    margin: 0 7px 0 7px;
+  }
+}
+
+.article-item h3 {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+.article-item .picture {
+  position: relative;
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+}
+
+.article-item .picture img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-item .picture {
+    width: auto;
+    float: none;
+    height: 185px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .article-item .picture {
+    height: 215px; /* 4:3*/
+  }
+}
+
+/* Obsah inzeratu*/
+.article-item .content {
+  float: left;
+  width: 65%;
+  padding: 0;
+
+  @media only screen and (min-width: 768px) {
+    float: none;
+    width: auto;
+  }
+}
+
+.article-item .content p {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-item .content .price {
+    position: absolute;
+    right: 23px;
+    top: 170px;
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .article-item .content .price {
+    top: 200px;
+  }
+}
+
+.article-item.no_background {
+  background: 0;
+}
+
+.article-item.with-border {
+  border: 1px solid #ddd;
+}
+
+.article-item:hover {
+  background-color: #eee;
+  cursor: pointer;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.article-item:hover h3 a {
+  color: #555;
+}
