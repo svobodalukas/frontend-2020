@@ -58,7 +58,7 @@ Intersection Observer
 */
 
 let observerOptions = {
-    rootMargin: "100px 0px",
+    rootMargin: "50px 0px",
     threshold: 0.01
 };
 
@@ -87,7 +87,7 @@ Service workers
  - https://www.vzhurudolu.cz/prirucka/pwa
 */
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js', { scope: '/1-1_html/' }).then(function(reg) {
+    navigator.serviceWorker.register('sw.js', { scope: '/kod-html/' }).then(function(reg) {
   
       if(reg.installing) {
         console.log('Service worker installing');

@@ -18,6 +18,26 @@
 - WebAPI
 - PWA, ServiceWorker
 
+#### Odkazy k tématu
+https://www.internetingishard.com/html-and-css/semantic-html/
+https://gsnedders.html5.org/outliner/
+https://codepen.io/svobodalukas/pen/bmNPoO
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
+https://css-tricks.com/when-to-use-svg-vs-when-to-use-canvas/
+https://css-tricks.com/learn-canvas-snake-game/
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+https://ogp.me/
+https://schema.org/Product
+https://javascript.info/localstorage
+https://javascript.info/indexeddb
+https://bitsofco.de/an-overview-of-client-side-storage/
+https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+https://github.com/mdn/sw-test
+https://www.vzhurudolu.cz/prirucka/pwa
+
+
 ### JS Frameworky, automatizace
 
 [Prezentace](https://docs.google.com/presentation/d/1owqkwN_0-s9NOe-rXPdDjxX0iynfsFE331mCoz5wsow/edit?usp=sharing)
@@ -36,6 +56,10 @@
 - způsoby napojení do projektu, proměnné
 - Bootstrap pro angular
 - Verze 5 - co nás čeká
+
+#### Odkazy k tématu
+
+https://github.com/teddest/angular-bootstrap-starter
 
 ### SVG
 

@@ -2,11 +2,11 @@ self.addEventListener('install', function (event) {
     event.waitUntil(
         caches.open('v1').then(function (cache) {
             return cache.addAll([
-                '/1-1_html/',
-                '/1-1_html/index.html',
-                '/1-1_html/css/style.css',
-                '/1-1_html/script.js',
-                '/1-1_html/assets/image-640.jpg'
+                '/kod-html/',
+                '/kod-html/index.html',
+                '/kod-html/css/style.css',
+                '/kod-html/script.js',
+                '/kod-html/assets/image-640.jpg'
             ]);
         })
     );

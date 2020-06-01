@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Frontend / Empty project</title>
     <meta name="description" content="Frontend" />
+    <!--
+      Preload & preconnect
+      - https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf
+      - https://www.vzhurudolu.cz/prirucka/preload
+      - https://www.vzhurudolu.cz/prirucka/preconnect
+    -->
+    <link rel="preload" href="assets/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Microdata - Open Graph / https://ogp.me/ -->
@@ -118,6 +125,9 @@
 
     <!--
       Canvas
+      - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
+      - https://css-tricks.com/when-to-use-svg-vs-when-to-use-canvas/
+      - https://css-tricks.com/learn-canvas-snake-game/
     -->
     <script type="text/javascript">
       function draw() {
