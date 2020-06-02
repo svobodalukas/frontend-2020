@@ -102,4 +102,13 @@ if ('serviceWorker' in navigator) {
       console.log('Registration failed with ' + error);
     });
 }
-  
+
+/**
+Fetch
+ - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+*/
+fetch('https://www.lukassvoboda.cz/coding/bootstrap2020/ajax-json.php')
+  .then(response => response.json())
+  .then(data => {
+    console.table(data);
+  });

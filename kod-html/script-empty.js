@@ -12,6 +12,7 @@ IndexedDB
  - https://javascript.info/indexeddb
  - https://bitsofco.de/an-overview-of-client-side-storage/
 */
+/*
 let openDB = indexedDB.open('dbUsers', 1);
 openDB.onupgradeneeded = function () {
   let db = openDB.result;
@@ -41,7 +42,7 @@ openDB.onupgradeneeded = function () {
     }
   };
 }
-
+*/
 
 /**
 Intersection Observer
@@ -55,7 +56,7 @@ Service workers, PWA
  - https://github.com/mdn/sw-test
  - https://www.vzhurudolu.cz/prirucka/pwa
 */
-
+/*
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js', { scope: '/kod-html/' }).then(function(reg) {
 
@@ -72,4 +73,16 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with ' + error);
   });
 }
+*/
 
+/**
+Fetch
+ - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+*/
+/*
+fetch('https://www.lukassvoboda.cz/coding/bootstrap2020/ajax-json.php')
+  .then(response => response.json())
+  .then(data => {
+    console.table(data);
+  });
+*/  
