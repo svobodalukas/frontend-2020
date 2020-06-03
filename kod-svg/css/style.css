@@ -9,6 +9,11 @@ body {
 }
 
 /* size, fill, stroke */
+.svg-icon {
+  fill: red !important;
+  width: 10rem;
+  height: 10rem;
+}
 
 /* styly jen pro část svg obrázku */
 

@@ -7,9 +7,25 @@ https://gist.github.com/jareware/4738651
 */
 
 @import "variables";
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/buttons";
+
 @import "layout";
 
 $production: true;
+
+p {
+  color: $primary-color;
+}
 
 $alert-colors: (
   "ok": green,
@@ -53,7 +69,7 @@ h1 {
 $alerts: 'ok' 'error';
 @each $alert in $alerts {
   .alert-#{$alert} {
-    background: url('../assets/ico-#{$alert}.svg') no-repeat left center;
+    background: url('assets/ico-#{$alert}.svg') no-repeat left center;
     color: map-get($alert-colors, $alert);
   }
 }

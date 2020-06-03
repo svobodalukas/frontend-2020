@@ -13,6 +13,7 @@
       - https://www.vzhurudolu.cz/prirucka/preload
       - https://www.vzhurudolu.cz/prirucka/preconnect
     -->
+    <link rel="preload" href="assets/opensans-regular.woff" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="css/style.css" />
 
@@ -22,47 +23,130 @@
   <body>
     <!--
       Sémantika:
-       - header, footer, nav, main, section, article
+       - header, footer, nav, main, section, article, aside
        - vysvětlení: https://www.internetingishard.com/html-and-css/semantic-html/
        - struktura dokumentu (Outliner: https://gsnedders.html5.org/outliner/)
     -->
+    <header class="header">
+      <nav>
+        <ul class="nav">
+          <li>
+            <a href="">link</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <article class="article">
+        <header>
+          Záhlaví articlu
+        </header>
+        <h1>Titulek</h1>
+        <p>Odstavec textu</p>
+        <footer>
+          Zápatí
+        </footer>
+      </article>
+      <section class="article">
+        <h2>Titulek</h2>
+        <p>Odstavec textu</p>
+      </section>
+      <div class="article">
+        <h2>Titulek</h2>
+        <p>Odstavec textu</p>
+      </div>
+    </main>
+    <aside class="sidebar"></aside>
+    <footer class="footer"></footer>
 
     <!--
       Média
        - Figure, figcaption
        - Responsivní obrázky: picture, srcset, sizes
        - ukázka: https://codepen.io/svobodalukas/pen/bmNPoO
-    -->
+    
+    <figure>
+      <figcaption>Popis schématu</figcaption>
+    </figure>
 
+    <picture>
+      <source srcset="assets/image-1200.jpg" media="min-width: 1200px"  />
+      <source srcset="assets/image-640.webp" type="" />
+      <img src="assets/image-640.jpg" alt="obrázek">
+    </picture>
+
+    <img src="assets/image-640.jpg" alt="" srcset="assets/image-1200.jpg 1200w, assets/image-640.jpg 640w"
+    >
+-->
     <!-- 
       Média
        - video, audio
        - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-    -->
+    
 
+    <video controls>
+      <source src="assets/video.mp4" type="video/mp4">
+        Video není podporováno!
+    </video>
+
+    <audio controls>
+      <source src="assets/audio.mp3" type="audio/mp3">
+        Audio není podporováno!
+    </audio>
+-->
     <!--
       Canvas
        - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
        - https://css-tricks.com/when-to-use-svg-vs-when-to-use-canvas/
        - https://css-tricks.com/learn-canvas-snake-game/
     -->
+    <canvas
+      id="myCanvas"
+      width="600"
+      height="600"
+      style="background-color: wheat;"
+    >
+    </canvas>
+    <script>
+      const myCanvas = document.getElementById("myCanvas");
+      let ctx = myCanvas.getContext("2d");
+      ctx.fillColor = "";
+      ctx.fillRect(50, 50, 200, 300);
+    </script>
 
     <!--
       Formuláře
         - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
     -->
+    <br /><br />
+    <input type="email" value="text" required /><br />
+    <input type="number" value="" step="0.5" min="15" max="30" /><br />
+    <input type="search" value="" /><br />
+    <input type="date" value="" />
+    <br /><br />
 
     <!--
       Microdata - Schema.org
       https://schema.org/Product
     -->
-    <div class="article-item">
-      <img src="https://im9.cz/iR/importprodukt-orig/f68/f68ba79610c891891769d68e87be6c8e--mmf250x250.jpg" alt="Dell UltraSharp U2415">
+    <div itemscope itemtype="http://schema.org/Product" class="article-item">
+      <img
+        src="https://im9.cz/iR/importprodukt-orig/f68/f68ba79610c891891769d68e87be6c8e--mmf250x250.jpg"
+        alt="Dell UltraSharp U2415"
+      />
       <h2>Dell UltraSharp U2415</h2>
-      <div class="rating">92/100, podle 40 hodnocení</div>
+      <div class="rating">
+        <span itemprop="ratingValue">92</span>/100, podle
+        <span itemprop="reviewCount">40</span> hodnocení
+      </div>
       <div class="prices">od 5990 Kč do 9490 Kč od 8 dodavatelů</div>
     </div>
 
+
+    <div style="height: 70vh; background-color: violet;"></div>
+    <div style="height: 70vh; background-color: red;"></div>
+    <div style="height: 70vh; background-color: green;"></div>
+    <img src="" data-src="assets/foto-1200.jpg" alt=""  class="lazy"> 
 
     <script src="script-empty.js"></script>
   </body>

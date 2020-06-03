@@ -39,3 +39,22 @@ gulp.task('images', function () {
 gulp.task('default', gulp.series('styles', function () {
     gulp.watch('scss/**/*.scss', gulp.series('styles'));
 }));
+
+
+/*
+Gulp 3.x
+
+gulp.task('watch', ['styles'], function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("css/*.css").on('change', browserSync.reload);
+    gulp.watch("js/*.js").on('change', browserSync.reload);
+});
+
+gulp.task('default', ['watch']);
+
+*/

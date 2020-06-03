@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="/amp/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -38,5 +39,18 @@
     -->
     <h1>Welcome to the mobile web</h1>
     <amp-img src="/assets/image-640.jpg" alt="Welcome" height="400" width="800" layout="responsive"></amp-img>
+
+    <amp-sidebar id="sidebar1" side="right" layout="responsive">
+      <ul>
+        <li>Nav item 1</li>
+        <li><a href="#idTwo" on="tap:idTwo.scrollTo">Nav item 2</a></li>
+        <li>Nav item 3</li>
+        <li><a href="#idFour" on="tap:idFour.scrollTo">Nav item 4</a></li>
+        <li>Nav item 5</li>
+        <li>Nav item 6</li>
+      </ul>
+    </amp-sidebar>
+
+
   </body>
 </html>
