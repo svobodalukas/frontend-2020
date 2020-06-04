@@ -23,7 +23,13 @@ http://cssgridgarden.com/
 Jednoduchý grid
 https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
 */
-
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-rows: 200px 30vh 30px;
+    row-gap: 20px;
+    column-gap: 30px;
+}
 
 /* 
 Template Area 
@@ -35,3 +41,50 @@ sidebar    sidebar | main    footer
 ad         ad | footer
 footer
 */
+
+.header {
+    grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.ad {
+    grid-area: ad;
+}
+.footer {
+    grid-area: footer;
+}
+
+.content {
+    
+}
+
+@media only screen and (min-width: 500px) {
+    .content {
+        display: grid;
+        row-gap: 20px;
+        column-gap: 30px;
+        grid-template-columns: 12rem 1fr;
+        grid-template-rows: 3rem 4rem 1fr 3rem;
+        grid-template-areas:
+        "header  header"
+        "nav     nav"
+        "sidebar main "
+        "ad      footer";
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .content {
+        grid-template-columns: 12rem 1fr 8rem;
+        grid-template-rows: 3rem 1fr 1fr 3rem;
+        grid-template-areas:
+        "header  header  header"
+        "nav     main    sidebar"
+        "nav     main    ad"
+        "footer  footer  .";
+    }
+}
