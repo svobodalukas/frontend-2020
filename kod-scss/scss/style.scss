@@ -21,19 +21,30 @@ https://gist.github.com/jareware/4738651
 
 @import "layout";
 
-$production: true;
-
 p {
   color: $primary-color;
 }
 
+$production: true;
 
 // Parent selector &
 .heading {
   color: $primary-color;
 
+  &:hover {
+    // .heading:hover {}
+  }
+
+  &.nova-class {
+    // .heading.nova-class {}
+  }
+
+  .moje-trida {
+    // .heading .moje-trida {}
+  }
+
   .content.content-dark .article-main & {
-    color: lighten($primary-color, 10%);
+    color: lighten($primary-color, 10%); //.content.content-dark .article-main .heading {}
   }
 
   @if ($production) {
@@ -41,7 +52,14 @@ p {
   }
 }
 
+.heading--big {
+    
+}
+
 // !default
+$my-var: blue;
+
+$my-var: red !default;
 
 
 // Media query nesting
