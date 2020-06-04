@@ -19,22 +19,10 @@ http://cssgridgarden.com/
     padding: 1rem;
 }
 
-/* Jedoduchý grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    column-gap: 1rem;
-    row-gap: 1rem;
-    margin-bottom: 5rem;
-}
-
-.grid .box {
-    counter-increment: item;
-}
-
-.grid .box:before {
-    content: counter(item);
-}
+/*
+Jednoduchý grid
+https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+*/
 
 
 /* 
@@ -47,68 +35,3 @@ sidebar    sidebar | main    footer
 ad         ad | footer
 footer
 */
-.header {
-    grid-area: header;
-}
-
-.nav {
-    grid-area: nav;
-}
-
-.main {
-    grid-area: main;
-}
-
-.sidebar {
-    grid-area: sidebar;
-}
-
-.ad {
-    grid-area: ad;
-}
-
-.footer {
-    grid-area: footer;
-}
-
-.content {
-    display: grid;
-    row-gap: 1rem;
-    column-gap: 2rem;
-    grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "sidebar"
-    "ad"
-    "footer";
-    min-height: calc(100vh - 1rem);
-}
-
-@media screen and (min-width: 640px) {
-    .content {
-        grid-template-columns: 12rem 1fr;
-        grid-template-rows: 3rem 4rem 1fr 3rem;
-        grid-template-areas:
-        "header  header"
-        "nav     nav"
-        "sidebar main "
-        "ad      footer";
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .content {
-        grid-template-columns: 10rem 1fr 8rem;
-        grid-template-rows: 3rem 1fr 1fr 3rem;
-        grid-template-areas:
-        "header  header header"
-        "nav     main   sidebar"
-        "nav     main   ad"
-        "footer footer footer";
-    }
-
-    .nav a {
-        display: block;
-    }
-}

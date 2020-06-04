@@ -59,6 +59,10 @@ https://github.com/teddest/angular-bootstrap-starter
 
 ### CSS do hloubky
 
+[Test specificity](https://mjswensen.github.io/css-power-ups/the-cascade-and-specificity/specificity-quiz/)
+
+[Obecný CSS test](https://tutorialzine.com/2017/07/how-well-do-you-know-css)
+
 - Kaskáda
 - Flexbox
 - CSS Grid
@@ -110,9 +114,7 @@ https://github.com/teddest/angular-bootstrap-starter
 
 [Prezentace](https://docs.google.com/presentation/d/131gioQvt7zQhQBkvDfy3AQxnv65QTVdn__TX7Ohi1YU/edit?usp=sharing)
 
-- Vycházet z článku Ilinčev, něco zkusit rovnou v kódu - line height
-- Mrknout na Internet is Hard, …
-- Zkusit nějak prakticky - třeba Figma
+[Závěrečný UX test](https://userinyerface.com/)
 
 ## Jak to bude probíhat
 
