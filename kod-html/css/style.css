@@ -9,30 +9,121 @@ body {
 
 /* -- 1.2 Principy -- */
 
-/* a) kaskáda - pořadí */
+/*
+a) kaskáda - pořadí
+  <p class="text-red text-blue">Text</p>
+*/
+.text-red {
+  color: red;
+}
 
+.text-blue {
+  color: blue;
+}
 
 /* 
 b) kaskáda - specificita 
  - https://specificity.keegan.st/
  - https://mjswensen.github.io/css-power-ups/the-cascade-and-specificity/specificity-quiz/
+
+ <ul class="list">
+  <li class="list-item">
+    <a href="" class="list-link">Link</a>
+  </li>
+ </ul>
 */
 
-/* style="color: red;" 1000 */
+a {} /* spec: 1 */
+.class {} /* spec: 10 */
+#class {} /* spec: 100 */
+
+a  {
+  color: blue;
+}
+
+li  {
+  color: red;
+}
+
+.list-item {
+  color: green;
+}
+
+.list > li > a {
+  color: violet;
+}
+
+ul .list-item .list-link {
+  color: darkgreen;
+}
+
+/* <a style="color: red;"> 1000 */
 
 /* c) kaskáda - důležitost */
-
+.list-link {
+  color: black !important;
+}
 
 /*
 dědičnost - inheritance, font x margin
  - https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
+ <div class="blok">
+  <p>Text odstavce</p>
+ </div>
 */
+p {
+  font-size: 1rem;
+}
 
+.blok {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: red;
+  padding: 2rem;
+  border: 1px solid blue;
+}
 
 /* 
 selektory > + ~ [data-attr] a[href^="https"] 
+Test na selektory:
  - https://flukeout.github.io/
+
+ <ul>
+  <li>
+    <ul>
+      <li>
 */
+
+ul > li {
+
+}
+
+/*
+<div></div>
+<a href=""></a>
+<a href=""></a>
+<a href=""></a>
+<a href=""></a>
+*/
+div + a {
+
+}
+
+/*
+<a href=""></a>
+<div></div>
+<a href=""></a>
+<a href=""></a>
+<a href=""></a>
+<a href=""></a>
+*/
+div ~ a {
+
+}
+
+/* */
+a[data-link^="https"] 
+
 
 
 /* pseudoselektory
